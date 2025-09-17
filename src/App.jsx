@@ -11,7 +11,7 @@ function App() {
 
   useEffect(()=>{
     async function allApiData (){
-      const data = await axios.get("/src/json/data.json")
+      const data = await axios.get("/data.json")
       setApiData(data.data.data)
       
     }
@@ -23,9 +23,10 @@ function App() {
   return (
     <>
 
-{
+
+  {
   apiData.map((item)=>(
-<div className="card w-96 bg-base-100 card-xs shadow-sm mb-2 m-auto mt-5 ">
+<div className="card w-96 bg-base-100 card-xs shadow-sm mb-2 m-auto pt-5 ">
   <div className="card-body">
   <ul className='text-[14px]'>
     <li>Name : <span>{item.name}</span></li>
@@ -36,6 +37,7 @@ function App() {
 </div>
   ))
 }
+
 
 
     </>
